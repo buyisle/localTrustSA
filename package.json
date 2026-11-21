@@ -1,0 +1,17 @@
+{
+  "name": "local-trust-sa",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm --prefix server ci && npm --prefix client ci",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "test": "npm --prefix server test && npm --prefix client run lint && npm --prefix client run test:smoke",
+    "seed": "npm --prefix server run seed",
+    "test:browser": "node scripts/browser.mjs",
+    "notifications:email": "node server/scripts/email-notifications.js",
+    "assets:download": "node scripts/download-images.cjs"
+  }
+}
